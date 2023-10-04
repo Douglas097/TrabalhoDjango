@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>verificar Exclusão</title>
+    <link rel="stylesheet" type="text/css" href="/static/estoque/css/estilos.css" />
+</head>
+<body>
+    <h1>verificar Exclusão</h1>
+    
+    <p>Tem certeza de que deseja excluir o item "{{ item.nome }}"? Esta ação não pode ser desfeita.</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="verificar Exclusão">
+    </form>
+    
+    <a href="{% url 'detalhes_item' item.id %}">Cancelar</a> |
+    <a href="{% url 'lista_estoque' %}">Voltar para a Lista de Itens</a>
+</body>
+</html>

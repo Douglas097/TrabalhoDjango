@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+</head>
+<body>
+    <h1>Adicionar Item ao Estoque</h1>
+    <link rel="stylesheet" type="text/css" href="/static/estoque/css/estilos.css" />    
+    <form method="post">
+        {% csrf_token %}
+        <label for="id_nome">Nome:</label>
+        {{ form.nome }}
+        <label for="id_descricao">Descrição:</label>
+        {{ form.descricao }}
+        <label for="id_quantidade_disponivel">Quantidade Disponível:</label>
+        {{ form.quantidade_disponivel }}
+        <input type="submit" value="Adicionar Item">
+    </form>
+    
+    <a href="{% url 'lista_estoque' %}">Voltar para a Lista de Itens</a>
+</body>
+</html>
